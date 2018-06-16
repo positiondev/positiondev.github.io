@@ -1,0 +1,33 @@
+- name: Verso Books
+  url: "https://www.versobooks.com"
+  image: "logo_verso.gif"
+- name: Jacobin Magazine
+  url: "https://www.jacobinmag.com"
+  image: "logo_jacobin.gif"
+- url: "https://thenewinquiry.com/"
+  name: The New Inquiry
+  image: "logo_NI.gif"
+- url: "https://www.haymarketbooks.org"
+  name: Haymarket Books
+  image: "logo_haymarket.gif"
+- url: "http://www.sevenstories.com"
+  name: Seven Stories Press
+  image: "logo_ssp.gif"
+- url: "http://calculator.realfoodchallenge.org"
+  name: Real Food Challenge
+  image: "logo_realfood.gif"
+- url: "http://www.planyourlifespan.org"
+  name: PCORI Plan Your Lifespan
+  image: "logo_pcori.gif"
+- url: "https://www.criterion.com"
+  name: The Criterion Collection
+  image: "logo_criterion.gif"
+- url: "https://www.currentaffairs.org"
+  name: Current Affairs
+  image: "logo_ca.gif"
+- url: "https://www.dissentmagazine.org"
+  name: Dissent Magazine
+  image: "logo_dm.gif"
+- url: "https://frame.ai"
+  name: frame.ai
+  image: "logo_frameai.gif"

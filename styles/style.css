@@ -1,0 +1,77 @@
+.new { color: red }
+
+body { font-family: helvetica, sans-serif;
+       line-height: 1.25em; }
+
+header { padding-top: 2em; }
+
+h1 { font-size: 2.5em; line-height: 1em; }
+h1 a { text-decoration: none; color: black; }
+.header-wrapper { width: 50px; }
+
+main { margin: 1em; margin-top: 2em; }
+section { margin: 1em; margin-top: 2em; margin-bottom: 2em; }
+nav { margin: 1em; }
+
+nav ul { padding-left: 0 }
+nav ul li { display: inline }
+nav ul li a { margin-left: 1em }
+nav ul li:first-child a { margin: 0em }
+
+.byline { text-align: right }
+
+.clients h3 {
+  font-size:  1em;
+  font-weight: normal;
+}
+
+.clients ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  padding-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clients li {
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (min-width: 50em) {
+  header, nav, footer, section, main, hr {
+    width: 45em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .clients ul {
+    justify-content: center;
+  }
+  .clients li {
+    margin: 0.5em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .clients li {
+    margin: 0.25em;
+    width: 45%;
+  }
+}
+
+.team ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.team li {
+  margin: 1em;
+  margin-top: 2em;
+}
