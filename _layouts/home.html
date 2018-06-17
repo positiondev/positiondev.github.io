@@ -28,69 +28,75 @@
     <hr />
 
     <main>
-      {{ page.content | markdownify }}
-    </main>
 
-    <section class="clients" id="clients">
-      <h2>Our clients</h2>
-      <ul>
-        {% for client in site.data.clients %}
-        <li>
-          <img title="{{ client.name }} logo" src="/img/{{ client.image }}" />
-          <h3><a href="client.url">{{ client.name }}</a></h3>
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
+      <section class="mission">
+        {{ page.content | markdownify }}
+      </section>
 
-    <hr />
+      <hr />
 
-    <section class="skills" id="skills">
-      <h2>Our skills</h2>
-
-      <p>We carefully pair high-end technology services to the requirements and
-        reality of our clients' day to day operation. We study their needs and
-         create unique systems and processes to ensure their objectives are met.</p>
-      <ul>
-        <li>Front and Backend Development</li>
-        <li>Automated Testing and Deployment</li>
-        <li>Ecommerce and Fulfillment</li>
-        <li>Legacy Applications</li>
-        <li>Technical Strategy </li>
-      </ul>
-
-    </section>
-
-    <hr />
-
-    <section class="project" id="project-spotlight">
-      <h2>Project Spotlight</h2>
-
-      {% for testimonial in site.testimonials limit:1 %}
-      <h3>{{ testimonial.client_name }} (<a href="{{ testimonial.project_url }}">{{ testimonial.project_name }}</a>)</h3>
-      <blockquote>
-        {{ testimonial.content | markdownify }}
-      </blockquote>
-
-      <div class="byline">– {{ testimonial.person }}, {{ testimonial.title }}, {{ testimonial.client_name }}</div>
-      {% endfor %}
-    </section>
-
-    <hr />
-
-    <section class="team" id="team">
-      <h2>Our Team</h2>
-      <ul>
-          {% assign sorted = (site.workers | sort: 'start_date') %}
-          {% for worker in sorted | sort: start_date %}
+      <section class="clients" id="clients">
+        <h2>clients</h2>
+        <ul>
+          {% for client in site.data.clients %}
           <li>
-            <h3>{{ worker.name }}</h3>
-
-            <div>{{ worker.content | markdownify }}</div>
+            <img title="{{ client.name }} logo" src="/img/{{ client.image }}" />
+            <h3><a href="{{ client.url }}">{{ client.name }}</a></h3>
           </li>
           {% endfor %}
         </ul>
-    </section>
+      </section>
+
+      <hr />
+
+      <section class="skills" id="skills">
+        <h2>skills</h2>
+
+        <p>We carefully pair high-end technology services to the requirements and
+          reality of our clients' day to day operation. We study their needs and
+          create unique systems and processes to ensure their objectives are met.</p>
+        <ul>
+          <li>Front and backend development</li>
+          <li>Automated testing and deployment</li>
+          <li>Ecommerce and fulfillment</li>
+          <li>Legacy applications</li>
+          <li>Technical strategy </li>
+        </ul>
+
+      </section>
+
+      <hr />
+
+      <section class="project" id="project-spotlight">
+        <h2>project spotlight</h2>
+
+        {% for testimonial in site.testimonials limit:1 %}
+        <h3>{{ testimonial.client_name }} (<a href="{{ testimonial.project_url }}">{{ testimonial.project_name }}</a>)</h3>
+        <blockquote>
+          {{ testimonial.content | markdownify }}
+        </blockquote>
+
+        <div class="byline">– {{ testimonial.person }}, {{ testimonial.title }}, {{ testimonial.client_name }}</div>
+        {% endfor %}
+      </section>
+
+      <hr />
+
+      <section class="team" id="team">
+        <h2>team</h2>
+        <ul>
+            {% assign sorted = (site.workers | sort: 'start_date') %}
+            {% for worker in sorted | sort: start_date %}
+            <li>
+              <h3>{{ worker.name }}</h3>
+
+              <div>{{ worker.content | markdownify }}</div>
+            </li>
+            {% endfor %}
+          </ul>
+      </section>
+
+    </main>
 
     <hr />
 
