@@ -2,12 +2,7 @@
 
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>position development</title>
-
-    <link rel="stylesheet" href="styles/style.css" type="text/css" charset="utf-8">
+    {% include head.html %}
   </head>
 
   <body>
@@ -41,7 +36,7 @@
           {% for client in site.data.clients %}
           <li>
             <img title="{{ client.name }} logo" src="/img/{{ client.image }}" />
-            <h3><a href="{{ client.url }}">{{ client.name }}</a></h3>
+            <h3><a href="{{ client.url }}" target="_blank" rel="noopener">{{ client.name }}</a></h3>
           </li>
           {% endfor %}
         </ul>
@@ -85,8 +80,8 @@
       <section class="team" id="team">
         <h2>team</h2>
         <ul>
-            {% assign sorted = (site.workers | sort: 'start_date') %}
-            {% for worker in sorted | sort: start_date %}
+            {% assign sorted = site.workers | sort: 'start_date' %}
+            {% for worker in sorted %}
             <li>
               <h3>{{ worker.name }}</h3>
 
@@ -96,6 +91,50 @@
           </ul>
       </section>
 
+      <section class="contact-us" id="contact-us">
+        <h2>contact us</h2>
+
+        <form>
+          <label>
+            name
+            <input name="name">
+          </label>
+
+          <label>
+            email
+            <input name="email">
+          </label>
+
+          <fieldset>
+            <legend>interested in:</legend>
+
+            <label><input type="checkbox" name="webdev" />web development</label>
+            <label><input type="checkbox" name="software" />custom software development</label>
+            <label><input type="checkbox" name="maintenance" />custom software maintenance</label>
+            <label><input type="checkbox" name="strategy" />digital strategy</label>
+            <label><input type="checkbox" name="jobs" />jobs</label>
+            <label><input type="checkbox" name="collaboration" />collaboration</label>
+            <label><input type="checkbox" name="other">something else</label>
+          </fieldset>
+
+          <label>tell us more: <br />
+            <textarea name="details"></textarea>
+          </label>
+
+          <fieldset>
+            <legend>heard about position through:</legend>
+
+              <label><input type="checkbox" name="jobs" />a referral</label>
+              <label><input type="checkbox" name="collaboration" />an event</label>
+              <label><input type="checkbox" name="design" />search</label>
+              <label><input type="checkbox" name="contracting" />social media</label>
+              <label><input type="checkbox" name="other" />something else</label>
+          </fieldset>
+
+          <input type="submit" value="send" />
+        </form>
+
+      </section>
     </main>
 
     <hr />
