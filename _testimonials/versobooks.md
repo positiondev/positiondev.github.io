@@ -1,11 +1,9 @@
 ---
-layout: home
 client_name: Verso Books
 project_name: versobooks.com
 project_url: https://www.versobooks.com
 person: Jacob Stevens
 title: Managing Director
-company: Verso Books
 ---
 I’ve worked closely with Position Development for nearly three years, and I’m very happy to highly recommend them — they’re an unusually talented and effective development studio.
 
