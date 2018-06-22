@@ -239,11 +239,8 @@
     }
 
     (function(){
-      //document.getElementById("form").addEventListener("onsubmit")
-        window.captureEvents(Event.SUBMIT);
-        window.onsubmit=postToGoogleDrive
+       document.getElementById("contact-form").addEventListener("submit", postToGoogleDrive)
     }())
-
     </script>
   </body>
 
