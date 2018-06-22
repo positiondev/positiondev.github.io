@@ -95,17 +95,20 @@
         <h2>contact us</h2>
 
         <form>
-          <label>
-            name
-            <input name="name">
-          </label>
+          <fieldset class="basic-data">
+            <legend>basic data</legend>
+            <label>
+              name
+              <input name="name">
+            </label>
 
-          <label>
-            email
-            <input name="email">
-          </label>
+            <label>
+              email
+              <input name="email">
+            </label>
+          </fieldset>
 
-          <fieldset>
+          <fieldset class="interested">
             <legend>interested in:</legend>
 
             <label><input type="checkbox" name="webdev" />web development</label>
@@ -117,11 +120,11 @@
             <label><input type="checkbox" name="other">something else</label>
           </fieldset>
 
-          <label>tell us more: <br />
-            <textarea name="details"></textarea>
+          <label class="tell-more">tell us more: <br />
+            <textarea name="details" rows="4"></textarea>
           </label>
 
-          <fieldset>
+          <fieldset class="heard-about">
             <legend>heard about position through:</legend>
 
               <label><input type="checkbox" name="jobs" />a referral</label>
@@ -131,7 +134,9 @@
               <label><input type="checkbox" name="other" />something else</label>
           </fieldset>
 
-          <input type="submit" value="send" />
+          <div class="button-wrapper">
+            <input type="submit" value="send" />
+          </div>
         </form>
 
       </section>
