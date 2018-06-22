@@ -3,6 +3,8 @@
 <html lang="en">
   <head>
     {% include head.html %}
+
+    <https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js>
   </head>
 
   <body>
@@ -26,6 +28,24 @@
 
       <section class="mission">
         {{ page.content | markdownify }}
+      </section>
+
+      <hr />
+
+      <section class="services" id="services">
+        <h2>skills</h2>
+
+        <p>We carefully pair high-end technology services to the requirements and
+          reality of our clients' day to day operation. We study their needs and
+          create unique systems and processes to ensure their objectives are met.</p>
+        <ul>
+          <li>Front and backend development</li>
+          <li>Automated testing and deployment</li>
+          <li>Ecommerce and fulfillment</li>
+          <li>Legacy applications</li>
+          <li>Technical strategy </li>
+        </ul>
+
       </section>
 
       <hr />
@@ -94,44 +114,65 @@
       <section class="contact-us" id="contact-us">
         <h2>contact us</h2>
 
-        <form>
+        <form id="contact-form"
+              method="POST">
           <fieldset class="basic-data">
             <legend>basic data</legend>
             <label>
               name
-              <input name="name">
+              <input id="name" name="name">
             </label>
 
             <label>
               email
-              <input name="email">
+              <input id="email" name="email">
             </label>
           </fieldset>
 
           <fieldset class="interested">
             <legend>interested in:</legend>
 
-            <label><input type="checkbox" name="webdev" />web development</label>
-            <label><input type="checkbox" name="software" />custom software development</label>
-            <label><input type="checkbox" name="maintenance" />custom software maintenance</label>
-            <label><input type="checkbox" name="strategy" />digital strategy</label>
-            <label><input type="checkbox" name="jobs" />jobs</label>
-            <label><input type="checkbox" name="collaboration" />collaboration</label>
-            <label><input type="checkbox" name="other">something else</label>
+            <label><input type="checkbox" name="interested-in" value="webdev" />
+              web app development
+            </label>
+            <label><input type="checkbox" name="interested-in" value="software" />
+              custom software development
+            </label>
+            <label><input type="checkbox" name="interested-in" value="strategy" />
+              digital strategy
+            </label>
+            <label><input type="checkbox" name="interested-in" value="jobs" />
+              jobs
+            </label>
+            <label><input type="checkbox" name="interested-in" value="collaboration" />
+              collaboration
+            </label>
+            <label><input type="checkbox" name="interested-in" value="other">
+              something else
+            </label>
           </fieldset>
 
           <label class="tell-more">tell us more: <br />
-            <textarea name="details" rows="4"></textarea>
+            <textarea name="tell-more" rows="4"></textarea>
           </label>
 
           <fieldset class="heard-about">
             <legend>heard about position through:</legend>
-
-              <label><input type="checkbox" name="jobs" />a referral</label>
-              <label><input type="checkbox" name="collaboration" />an event</label>
-              <label><input type="checkbox" name="design" />search</label>
-              <label><input type="checkbox" name="contracting" />social media</label>
-              <label><input type="checkbox" name="other" />something else</label>
+              <label><input type="checkbox" name="heard-about" value="referral" />
+                a referral
+              </label>
+              <label><input type="checkbox" name="heard-about" value="event"/>
+                an event
+              </label>
+              <label><input type="checkbox" name="heard-about" value="search" />
+                search
+              </label>
+              <label><input type="checkbox" name="heard-about" value="social"/>
+                social media
+              </label>
+              <label><input type="checkbox" name="heard-about" value="other" />
+                something else
+              </label>
           </fieldset>
 
           <div class="button-wrapper">
@@ -159,6 +200,9 @@
       ga('send', 'pageview');
 
       (function() {
+
+
+
         const h2s = document.getElementsByTagName("h2")
 
         for (i = 0; i < h2s.length; i++) {
@@ -178,6 +222,28 @@
           });
         }
       }())
+
+    function postToGoogleDrive(e) {
+      e.preventDefault()
+      var googleApp = "https://script.google.com/macros/s/AKfycbwngP3bpq65-3DmPSOQ1C7vf428lHnFLa1x0X2QfYrSRDZUZ4S6/exec"
+
+      form = document.querySelector("form")
+      formData = new FormData(form)
+      var queryString = new URLSearchParams(formData).toString()
+
+      var url = googleApp + '?' + queryString
+
+      window.fetch(url, {
+        method: "GET"
+      })
+    }
+
+    (function(){
+      //document.getElementById("form").addEventListener("onsubmit")
+        window.captureEvents(Event.SUBMIT);
+        window.onsubmit=postToGoogleDrive
+    }())
+
     </script>
   </body>
 
