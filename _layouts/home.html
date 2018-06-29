@@ -117,8 +117,8 @@
             <label><input type="checkbox" name="interested-in" value="webdev" />
               web app development
             </label>
-            <label><input type="checkbox" name="interested-in" value="software" />
-              custom software development
+            <label><input type="checkbox" name="interested-in" value="legacy" />
+              legacy software maintenance
             </label>
             <label><input type="checkbox" name="interested-in" value="strategy" />
               digital strategy
@@ -135,24 +135,24 @@
           </fieldset>
 
           <label class="tell-more">tell us more: <br />
-            <textarea name="tell-more" rows="4"></textarea>
+            <textarea name="tell-us-more" rows="4"></textarea>
           </label>
 
           <fieldset class="heard-about">
             <legend>heard about position through:</legend>
-              <label><input type="checkbox" name="heard-about" value="referral" />
+              <label><input type="checkbox" name="heard-about-via" value="referral" />
                 a referral
               </label>
-              <label><input type="checkbox" name="heard-about" value="event"/>
+              <label><input type="checkbox" name="heard-about-via" value="event"/>
                 an event
               </label>
-              <label><input type="checkbox" name="heard-about" value="search" />
+              <label><input type="checkbox" name="heard-about-via" value="search" />
                 search
               </label>
-              <label><input type="checkbox" name="heard-about" value="social"/>
+              <label><input type="checkbox" name="heard-about-via" value="social"/>
                 social media
               </label>
-              <label><input type="checkbox" name="heard-about" value="other" />
+              <label><input type="checkbox" name="heard-about-via" value="other" />
                 something else
               </label>
           </fieldset>
@@ -161,6 +161,12 @@
             <input type="submit" value="send" />
           </div>
         </form>
+
+        <div id="thank-you">
+          <h3 id="thank-you-name">thank you</h3>
+
+          <p>We'll get back to you shortly.</p>
+        </div>
 
       </section>
     </main>
@@ -182,9 +188,6 @@
       ga('send', 'pageview');
 
       (function() {
-
-
-
         const h2s = document.getElementsByTagName("h2")
 
         for (i = 0; i < h2s.length; i++) {
@@ -205,23 +208,47 @@
         }
       }())
 
-    function postToGoogleDrive(e) {
+    function postToAirtableViaGlitch(e) {
       e.preventDefault()
-      var googleApp = "https://script.google.com/macros/s/AKfycbwngP3bpq65-3DmPSOQ1C7vf428lHnFLa1x0X2QfYrSRDZUZ4S6/exec"
+      var glitch = "https://airtable-post-proxy.glitch.me/api/contact";
 
-      form = document.querySelector("form")
-      formData = new FormData(form)
-      var queryString = new URLSearchParams(formData).toString()
+      var form = document.getElementById("contact-form")
 
-      var url = googleApp + '?' + queryString
+      const formData = new FormData(form);
+      let jsonObject = {};
 
-      window.fetch(url, {
-        method: "GET"
+      for (const [key, value]  of formData.entries()) {
+        if (jsonObject[key]) {
+          var curVal = jsonObject[key];
+          if (Array.isArray(curVal) && curVal.length > 1) {
+            list = curVal;
+          } else {
+            list = [curVal];
+          }
+          list.push(value)
+          jsonObject[key] = list;
+        } else {
+          jsonObject[key] = value;
+        }
+      }
+
+      window.fetch(glitch, {
+        method: "POST",
+        body: JSON.stringify(jsonObject),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
       })
+
+      document.getElementById("contact-form").style.display = "none";
+      document.getElementById("thank-you").style.display = "block";
+      document.getElementById("thank-you-name").innerHTML = "thank you, " + jsonObject['name'];
     }
 
+
     (function(){
-       document.getElementById("contact-form").addEventListener("submit", postToGoogleDrive)
+       document.getElementById("contact-form").addEventListener("submit", postToAirtableViaGlitch)
     }())
     </script>
   </body>

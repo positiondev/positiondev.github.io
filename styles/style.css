@@ -10,6 +10,11 @@
  header {
   padding-top:2em
  }
+
+ #thank-you { 
+   display: none;
+ }
+
  h1 {
   font-size:2.5em;
   line-height:1em;
