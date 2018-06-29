@@ -2,10 +2,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Custom software development">
 
-{% if page.title %}
-<title>position development: {{ page.title }}</title>
-{% else %}
+{% if page.title == "home" %}
 <title>position development</title>
+{% else %}
+<title>position development: {{ page.title }}</title>
 {% endif %}
 
 <link rel="stylesheet" href="styles/style.css" />
