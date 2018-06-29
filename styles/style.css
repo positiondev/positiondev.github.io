@@ -34,7 +34,6 @@ main {
   margin: 0.25em;
   max-width: 50em
 }
-
 section {
   margin:0.25em;
   margin-top:2em;
@@ -65,8 +64,6 @@ nav ul li:first-child a {
 .project-spotlight {
   position: relative;
 }
-
-
 blockquote::before {
   content: "“";
   font-size: 2em;
@@ -74,11 +71,9 @@ blockquote::before {
   position: absolute;
   left: -0.5em;
 }
-
 blockquote {
   margin: 0.5em;
 }
-
 blockquote::after {
   content: "”";
   font-size: 2em;
@@ -87,10 +82,9 @@ blockquote::after {
   right: 1em;
   bottom: 0;
 }
-
-
 .byline {
-  text-align:right
+  text-align:right;
+  padding-bottom: 2em;
 }
 
 /* Clients section */
@@ -98,7 +92,6 @@ blockquote::after {
 .clients h3 {
   font-size:1em;
   font-weight:normal;
-  /*! align-content: center; */
 }
 .clients ul {
   list-style:none;
@@ -164,6 +157,7 @@ textarea {
   margin:auto;
   box-sizing: border-box;
   display: block;
+  border: 1px solid black;
 }
 .button-wrapper {
   display: flex;
@@ -176,10 +170,7 @@ textarea {
 
 /* SIZE-SPECIFIC STYLES */
 
-@media only screen and (min-width:66em) {  
-  nav ul li a {
-    /*! margin-left:1em */
-  }
+@media only screen and (min-width:66em) {
   header,nav {
     margin:auto
   }
@@ -187,11 +178,11 @@ textarea {
     width:45em;
     margin: auto;
   }
-  
+
   main {
     margin: auto;
   }
-  
+
   body>hr:nth-child(3) {
     width:100%;
     margin-left:0
@@ -237,11 +228,11 @@ textarea {
     -o-animation: rainbow 6s ease infinite;
     animation: rainbow 6s ease infinite;
   }
-  
+
   /* FORMS */
   form {
     max-width:30em;
-    margin-left: 3em;
+    margin: auto;
     margin-bottom: 3em;
   }
 }
