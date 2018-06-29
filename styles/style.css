@@ -8,7 +8,6 @@ body {
   color:444
 }
 header {
-  padding-top:2em
 }
 
 h1 {
@@ -31,13 +30,13 @@ h3 {
 }
 
 main {
-  margin-top:2em;
-  margin:auto;
-  max-width:50em
+  margin-top: 2em;
+  margin: 0.25em;
+  max-width: 50em
 }
 
 section {
-  margin:1em;
+  margin:0.25em;
   margin-top:2em;
   margin-bottom:2em
 }
@@ -45,22 +44,50 @@ section {
 /* Nav section */
 
 nav {
-  margin:1em
+  margin:0.25em;
 }
 nav ul {
-  padding-left:0
+  padding-left:0;
+  display: flex;
+  flex-wrap: wrap;
 }
 nav ul li {
-  display:inline
-}
-nav ul li a {
-  margin-left:1em
+  display:inline;
+  padding: 0.25em 0.5em 0.5em 0.25em;
+  margin: 0;
 }
 nav ul li:first-child a {
   margin:0
 }
 
 /* Testimonial section */
+
+.project-spotlight {
+  position: relative;
+}
+
+
+blockquote::before {
+  content: "“";
+  font-size: 2em;
+  color: grey;
+  position: absolute;
+  left: -0.5em;
+}
+
+blockquote {
+  margin: 0.5em;
+}
+
+blockquote::after {
+  content: "”";
+  font-size: 2em;
+  color: grey;
+  position: absolute;
+  right: 1em;
+  bottom: 0;
+}
+
 
 .byline {
   text-align:right
@@ -70,7 +97,8 @@ nav ul li:first-child a {
 
 .clients h3 {
   font-size:1em;
-  font-weight:normal
+  font-weight:normal;
+  /*! align-content: center; */
 }
 .clients ul {
   list-style:none;
@@ -84,7 +112,8 @@ nav ul li:first-child a {
   display:flex;
   justify-content:flex-end;
   flex-direction:column;
-  align-items:center
+  align-items:center;
+  text-align: center;
 }
 
 /* Team section */
@@ -100,13 +129,15 @@ nav ul li:first-child a {
 
 /* FORMS */
 
-form {
-  max-width:30em;
-  margin-left: 3em;
+.contact-us {
+  max-width: 40em;
+  margin: auto;
 }
+
 fieldset {
   display:flex;
   flex-direction:column;
+  margin: 0;
   margin-top:1em;
   margin-bottom:1em
 }
@@ -145,13 +176,22 @@ textarea {
 
 /* SIZE-SPECIFIC STYLES */
 
-@media only screen and (min-width:66em) {
+@media only screen and (min-width:66em) {  
+  nav ul li a {
+    /*! margin-left:1em */
+  }
   header,nav {
     margin:auto
   }
   header,footer,nav,section,hr {
-    width:45em
+    width:45em;
+    margin: auto;
   }
+  
+  main {
+    margin: auto;
+  }
+  
   body>hr:nth-child(3) {
     width:100%;
     margin-left:0
@@ -175,7 +215,7 @@ textarea {
     margin-top:2em
   }
   section {
-    margin-left:5em
+    margin-left:5em;
   }
   section h2 {
     margin-left:-2em
@@ -196,6 +236,13 @@ textarea {
     -z-animation: rainbow 6s ease infinite;
     -o-animation: rainbow 6s ease infinite;
     animation: rainbow 6s ease infinite;
+  }
+  
+  /* FORMS */
+  form {
+    max-width:30em;
+    margin-left: 3em;
+    margin-bottom: 3em;
   }
 }
 
