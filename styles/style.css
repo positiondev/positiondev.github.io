@@ -7,17 +7,20 @@ body {
   line-height:1.5em;
   color:444
 }
-header {
+header { 
+  display: flex;
 }
 
 h1 {
   font-size:2.5em;
   line-height:1em;
-  color:black
+  color:black;
+  width: 50%;
 }
 h1 a {
   text-decoration:none;
-  color:black
+  color:black;
+  /*! width: 50%; */
 }
 
 h2 {
@@ -27,34 +30,48 @@ h2 {
   -webkit-text-fill-color: black;
   background-size: 900% 900%;
   transition: 1s;
+  text-align: right;
+  flex-basis: 6em;
+  margin-right: 1em;
 }
 h3 {
   color:black
 }
 .header-wrapper {
-  width:50px
+  /*! max-width: 50em; */
+  width: 100%;
 }
 
 main {
   margin-top: 2em;
   margin: 0.25em;
-  max-width: 50em
+  max-width: 75em
 }
 section {
   margin:0.25em;
   margin-top:2em;
-  margin-bottom:2em
+  margin-bottom:2em;
+  display: flex;
+}
+
+div {
+  width: 100%;
+}
+
+ul {
 }
 
 /* Nav section */
 
 nav {
   margin:0.25em;
+  display: flex;
 }
 nav ul {
   padding-left:0;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 nav ul li {
   display:inline;
@@ -122,15 +139,15 @@ blockquote::after {
   padding-left:0
 }
 .team li {
-  margin:1em;
+  /*! margin:1em; */
   margin-top:2em
 }
 
 /* FORMS */
 
 .contact-us {
-  max-width: 40em;
-  margin: auto;
+  /*! max-width: 40em; */
+  /*! margin: auto; */
 }
 
 fieldset {
@@ -180,9 +197,20 @@ textarea {
   header,nav {
     margin:auto
   }
-  header,footer,nav,section,hr {
-    width:45em;
+  header, nav {
+    max-width:75em;
     margin: auto;
+    /*! margin-left: 24em; */
+  }
+
+  footer, footer nav {
+    max-width:40em;
+    margin: auto;
+  }
+  
+  section {
+    font-size: 1em;
+    /*max-width: 60em;*/
   }
 
   main {
@@ -199,7 +227,7 @@ textarea {
   }
   h1 {
     font-size:4em;
-    margin-bottom:0
+    margin-bottom:0;
   }
   h2 {
     font-size:3em;
@@ -215,7 +243,7 @@ textarea {
     margin-left:5em;
   }
   section h2 {
-    margin-left:-2em
+    margin-left:-2em;
   }
 
   /* RAINBOW HOVER */
@@ -236,8 +264,8 @@ textarea {
 
   /* FORMS */
   form {
-    max-width:30em;
-    margin: auto;
+    /*! max-width:30em; */
+    /*! margin: auto; */
     margin-bottom: 3em;
   }
 }
