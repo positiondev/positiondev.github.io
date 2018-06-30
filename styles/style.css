@@ -19,8 +19,14 @@ h1 a {
   text-decoration:none;
   color:black
 }
+
 h2 {
-  color:black
+  color:black;
+  background: -webkit-linear-gradient(0deg, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #ff2400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: black;
+  background-size: 900% 900%;
+  transition: 1s;
 }
 h3 {
   color:black
@@ -214,8 +220,7 @@ textarea {
 
   /* RAINBOW HOVER */
   .nothover{
-    text-shadow:-1px 0 black,0 1px black,1px 0 black,0 -1px black;
-    color: white;
+    color: black;
   }
   .hover {
     background: -webkit-linear-gradient(0deg, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #ff2400);
