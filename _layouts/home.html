@@ -13,6 +13,7 @@
     </header>
 
     <nav>
+      <h2></h2>
       <ul>
           <li><a href="/">home</a></li>
           <li><a href="#clients">clients</a></li>
@@ -22,18 +23,22 @@
       </ul>
     </nav>
 
-    <hr />
-
     <main>
+      <hr />
+
 
       <section class="mission">
+        <h2>mission</h2>
+        <div>
         {{ page.content | markdownify }}
+        </div>
       </section>
 
       <hr />
 
       <section class="clients" id="clients">
         <h2>clients</h2>
+
         <ul>
           {% for client in site.data.clients %}
           <li>
@@ -49,17 +54,18 @@
       <section class="skills" id="skills">
         <h2>skills</h2>
 
-        <p>We carefully pair high-end technology services to the requirements and
-          reality of our clients' day to day operation. We study their needs and
-          create unique systems and processes to ensure their objectives are met.</p>
-        <ul>
-          <li>Front and backend development</li>
-          <li>Automated testing and deployment</li>
-          <li>Ecommerce and fulfillment</li>
-          <li>Legacy applications</li>
-          <li>Technical strategy </li>
-        </ul>
-
+        <div>
+          <p>We carefully pair high-end technology services to the requirements and
+            reality of our clients' day to day operation. We study their needs and
+            create unique systems and processes to ensure their objectives are met.</p>
+          <ul>
+            <li>Front and backend development</li>
+            <li>Automated testing and deployment</li>
+            <li>Ecommerce and fulfillment</li>
+            <li>Legacy applications</li>
+            <li>Technical strategy </li>
+          </ul>
+        </div>
       </section>
 
       <hr />
@@ -67,20 +73,23 @@
       <section class="project" id="project-spotlight">
         <h2>project spotlight</h2>
 
-        {% for testimonial in site.testimonials limit:1 %}
-        <h3>{{ testimonial.client_name }} (<a href="{{ testimonial.project_url }}">{{ testimonial.project_name }}</a>)</h3>
-        <blockquote>
-          {{ testimonial.content | markdownify }}
-        </blockquote>
+        <div>
+          {% for testimonial in site.testimonials limit:1 %}
+          <h3>{{ testimonial.client_name }} (<a href="{{ testimonial.project_url }}">{{ testimonial.project_name }}</a>)</h3>
+          <blockquote>
+            {{ testimonial.content | markdownify }}
+          </blockquote>
 
-        <div class="byline">– {{ testimonial.person }}, {{ testimonial.title }}, {{ testimonial.client_name }}</div>
-        {% endfor %}
+          <div class="byline">– {{ testimonial.person }}, {{ testimonial.title }}, {{ testimonial.client_name }}</div>
+          {% endfor %}
+        </div>
       </section>
 
       <hr />
 
       <section class="team" id="team">
         <h2>team</h2>
+
         <ul>
             {% assign sorted = site.workers | sort: 'start_date' %}
             {% for worker in sorted %}
@@ -90,86 +99,87 @@
               <div>{{ worker.content | markdownify }}</div>
             </li>
             {% endfor %}
-          </ul>
+        </ul>
       </section>
 
       <hr />
 
       <section class="contact-us" id="contact-us">
-        <h2>contact us</h2>
+        <h2>contact position</h2>
 
-        <form id="contact-form"
-              method="POST">
-          <fieldset class="basic-data">
-            <legend>basic data</legend>
-            <label>
-              name
-              <input id="name" name="name">
-            </label>
-
-            <label>
-              email
-              <input id="email" name="email">
-            </label>
-          </fieldset>
-
-          <fieldset class="interested">
-            <legend>interested in:</legend>
-
-            <label><input type="checkbox" name="interested-in" value="webdev" />
-              web app development
-            </label>
-            <label><input type="checkbox" name="interested-in" value="legacy" />
-              legacy software maintenance
-            </label>
-            <label><input type="checkbox" name="interested-in" value="strategy" />
-              digital strategy
-            </label>
-            <label><input type="checkbox" name="interested-in" value="jobs" />
-              jobs
-            </label>
-            <label><input type="checkbox" name="interested-in" value="collaboration" />
-              collaboration
-            </label>
-            <label><input type="checkbox" name="interested-in" value="other">
-              something else
-            </label>
-          </fieldset>
-
-          <label class="tell-more">tell us more: <br />
-            <textarea name="tell-us-more" rows="4"></textarea>
-          </label>
-
-          <fieldset class="heard-about">
-            <legend>heard about position through:</legend>
-              <label><input type="checkbox" name="heard-about-via" value="referral" />
-                a referral
+          <div>
+          <form id="contact-form"
+                method="POST">
+            <fieldset class="basic-data">
+              <legend>basic data</legend>
+              <label>
+                name
+                <input id="name" name="name">
               </label>
-              <label><input type="checkbox" name="heard-about-via" value="event"/>
-                an event
+
+              <label>
+                email
+                <input id="email" name="email">
               </label>
-              <label><input type="checkbox" name="heard-about-via" value="search" />
-                search
+            </fieldset>
+
+            <fieldset class="interested">
+              <legend>interested in:</legend>
+
+              <label><input type="checkbox" name="interested-in" value="webdev" />
+                web app development
               </label>
-              <label><input type="checkbox" name="heard-about-via" value="social"/>
-                social media
+              <label><input type="checkbox" name="interested-in" value="legacy" />
+                legacy software maintenance
               </label>
-              <label><input type="checkbox" name="heard-about-via" value="other" />
+              <label><input type="checkbox" name="interested-in" value="strategy" />
+                digital strategy
+              </label>
+              <label><input type="checkbox" name="interested-in" value="jobs" />
+                jobs
+              </label>
+              <label><input type="checkbox" name="interested-in" value="collaboration" />
+                collaboration
+              </label>
+              <label><input type="checkbox" name="interested-in" value="other">
                 something else
               </label>
-          </fieldset>
+            </fieldset>
 
-          <div class="button-wrapper">
-            <input type="submit" value="send" />
+            <label class="tell-more">tell us more: <br />
+              <textarea name="tell-us-more" rows="4"></textarea>
+            </label>
+
+            <fieldset class="heard-about">
+              <legend>heard about position through:</legend>
+                <label><input type="checkbox" name="heard-about-via" value="referral" />
+                  a referral
+                </label>
+                <label><input type="checkbox" name="heard-about-via" value="event"/>
+                  an event
+                </label>
+                <label><input type="checkbox" name="heard-about-via" value="search" />
+                  search
+                </label>
+                <label><input type="checkbox" name="heard-about-via" value="social"/>
+                  social media
+                </label>
+                <label><input type="checkbox" name="heard-about-via" value="other" />
+                  something else
+                </label>
+            </fieldset>
+
+            <div class="button-wrapper">
+              <input type="submit" value="send" />
+            </div>
+          </form>
+
+          <div id="thank-you">
+            <h3 id="thank-you-name">thank you</h3>
+
+            <p>We'll get back to you shortly.</p>
           </div>
-        </form>
-
-        <div id="thank-you">
-          <h3 id="thank-you-name">thank you</h3>
-
-          <p>We'll get back to you shortly.</p>
         </div>
-
       </section>
     </main>
 
