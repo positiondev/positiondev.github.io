@@ -219,7 +219,7 @@ textarea
     display: flex;
     flex-direction: row;
 
-    justify-content: right;
+    justify-content: flex-end;
 }
 #thank-you
 {
@@ -286,7 +286,6 @@ textarea
         line-height: 1em;
 
         width: 100%;
-        /*! max-width: 7em; */
         margin-bottom: 0;
     }
     .project h3
