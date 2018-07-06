@@ -56,10 +56,6 @@ nav
 {
     margin: .5em;
 }
-nav h2
-{
-    display: none;
-}
 nav ul
 {
     width: 100%;
@@ -96,7 +92,6 @@ section
 {
     margin: .25em;
     margin-top: 2.5em;
-    /*! margin-bottom: 2em; */
 }
 
 /* Testimonial section */
@@ -219,7 +214,7 @@ textarea
     display: flex;
     flex-direction: row;
 
-    justify-content: right;
+    justify-content: flex-end;
 }
 #thank-you
 {
