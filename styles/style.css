@@ -58,6 +58,7 @@ nav ul
     width: 100%;
     margin: 0;
     padding: 0;
+    /*! display: flex; */
 }
 nav ul li
 {
@@ -66,20 +67,30 @@ nav ul li
     margin: 0;
     padding: .25em .5em 0.25em 0.5em;
 }
+.twitter a {
+    background-image: url("/img/twitter-32.png");
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    padding: 0px;
+    margin-left: 0.5em;
+    background-size: 28px 28px;
+    color: transparent;
+}
 
 /* MAIN and SECTION */
 main
 {
     font-size: 18px;
 
-    max-width: 60em;
+    max-width: 50em;
     margin: 1.5em .25em 1.5em .25em;
 }
 section
 {
     margin: .25em;
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 /* Testimonial section */
@@ -140,8 +151,17 @@ blockquote
 }
 .team h3
 {
-    margin-top: .25em;
+    margin-top: 2em;
     margin-bottom: 0;
+}
+
+.team li:first-child h3 {
+    margin-top: 1em;
+}
+
+footer { 
+    text-align: center;
+    margin: auto;
 }
 
 /* FORMS */
@@ -169,6 +189,7 @@ input[type='submit']
 {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1em;
 }
 .tell-more
 {
@@ -185,11 +206,11 @@ textarea
     display: block;
 
     box-sizing: border-box;
-    width: 95%;
-    margin: auto;
+    width: calc(100% - 2em);
+    margin: 1em 1em 1em 1em;
     padding: .5em;
 
-    border: 1px solid #666;
+    border: 1px solid #888;
 }
 .button-wrapper
 {
@@ -215,9 +236,9 @@ textarea
     header,
     nav
     {
-        display: flex;
+        /*! display: flex; */
 
-        max-width: 60em;
+        max-width: 50em;
         margin: auto;
     }
     nav h2
@@ -235,7 +256,7 @@ textarea
     {
         font-size: 1em;
 
-        display: flex;
+        /*! display: flex; */
     }
     main
     {
@@ -260,17 +281,17 @@ textarea
 
         width: 100%;
         max-width: 7em;
-        margin-top: .25em;
-        margin-right: 1em;
+        /*! margin-right: 1em; */
         margin-bottom: 0;
 
-        text-align: right;
+        /*! text-align: right; */
 
-        flex-basis: 6em;
+        /*! flex-basis: 6em; */
+        /*! margin-top: -0.75em; */
     }
     .project h3
     {
-        margin-top: .5em;
+        margin-top: 1em;
     }
 
     /* RAINBOW HOVER */
@@ -296,6 +317,8 @@ textarea
     form
     {
         margin-bottom: 3em;
+        max-width: 30em;
+        margin: auto;
     }
 }
 

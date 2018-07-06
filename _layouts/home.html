@@ -13,19 +13,12 @@
     </header>
 
     <nav>
-      <h2></h2>
-      <ul>
-          <li><a href="/">home</a></li>
-          <li><a href="#clients">clients</a></li>
-          <li><a href="#project-spotlight">project spotlight</a></li>
-          <li><a href="#team">team</a></li>
-          <li><a href="#contact-us">contact us</a></li>
-      </ul>
+      {% include nav.html %}
     </nav>
 
-    <main>
-      <hr />
+    <hr />
 
+    <main>
 
       <section class="mission">
         <h2>mission</h2>
@@ -33,8 +26,6 @@
         {{ page.content | markdownify }}
         </div>
       </section>
-
-      <hr />
 
       <section class="clients" id="clients">
         <h2>clients</h2>
@@ -48,8 +39,6 @@
           {% endfor %}
         </ul>
       </section>
-
-      <hr />
 
       <section class="skills" id="skills">
         <h2>skills</h2>
@@ -68,8 +57,6 @@
         </div>
       </section>
 
-      <hr />
-
       <section class="project" id="project-spotlight">
         <h2>project spotlight</h2>
 
@@ -84,8 +71,6 @@
           {% endfor %}
         </div>
       </section>
-
-      <hr />
 
       <section class="team" id="team">
         <h2>team</h2>
@@ -102,12 +87,14 @@
         </ul>
       </section>
 
-      <hr />
-
       <section class="contact-us" id="contact-us">
-        <h2>contact position</h2>
+        <h2>contact us</h2>
 
-          <div>
+        <div>
+
+          <p>Fill out the form below or email us at
+            <a href="mailto:workers@positiondev.com">workers@positiondev.com</a>.</p>
+
           <form id="contact-form"
                 method="POST">
             <fieldset class="basic-data">
