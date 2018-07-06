@@ -48,3 +48,5 @@ The rest of the sections are currently hardcoded into the template, `_/layouts/h
 The `minify_css.rb` plugin in the `_plugins` directory minifies the CSS in `styles/style.css` and stores it in `site.data.css`. You can then use it in a `style` tag. This is to maximize the PageSpeed speed score by inlining critical CSS.
 
 If the CSS gets too large, we may need to handle this differently.
+
+*This is not currently live because Github Pages doesn't allow custom plugins.*
