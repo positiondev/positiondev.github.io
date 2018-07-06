@@ -257,7 +257,11 @@ textarea
     {
         font-size: 1em;
 
-        margin-top: 2em;
+        margin-top: 3em;
+    }
+    .mission
+    {
+        margin-top: 1em;
     }
     main
     {
@@ -282,7 +286,7 @@ textarea
         line-height: 1em;
 
         width: 100%;
-        max-width: 7em;
+        /*! max-width: 7em; */
         margin-bottom: 0;
     }
     .project h3
