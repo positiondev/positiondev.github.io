@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    {% include head.html %}
+
+    <https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js>
+  </head>
+
+  <body>
+    <header>
+      {% include header.html %}
+    </header>
+
+    <nav>
+      {% include nav.html %}
+    </nav>
+
+    <hr />
+
+    <main>
+      <section>
+        <h2>
+          {{ page.title }}
+        </h2>
+        <div>
+        {{ content }}
+        </div>
+      </section>
+    </main>
+
+    <hr />
+
+    <footer>
+      {% include footer.html %}
+    </footer>
+  </body>
+
+</html>

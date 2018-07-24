@@ -1,0 +1,14 @@
+---
+layout: default
+title: team
+---
+<ul class="team">
+      {% assign sorted = site.workers | sort: 'start_date' %}
+      {% for worker in sorted %}
+      <li>
+        <h3>{{ worker.name }}</h3>
+
+        <div>{{ worker.content | markdownify }}</div>
+      </li>
+      {% endfor %}
+</ul>
