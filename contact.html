@@ -1,0 +1,80 @@
+---
+title: contact us
+layout: default
+---
+<div>
+  <p>Fill out the form below or email us at
+    <a href="mailto:workers@positiondev.com">workers@positiondev.com</a>.</p>
+
+  <form id="contact-form"
+        method="POST">
+    <fieldset class="basic-data">
+      <legend>basic data</legend>
+      <label>
+        name
+        <input id="name" name="name">
+      </label>
+
+      <label>
+        email
+        <input id="email" name="email">
+      </label>
+    </fieldset>
+
+    <fieldset class="interested">
+      <legend>interested in:</legend>
+
+      <label><input type="checkbox" name="interested-in" value="webdev" />
+        web app development
+      </label>
+      <label><input type="checkbox" name="interested-in" value="legacy" />
+        legacy software maintenance
+      </label>
+      <label><input type="checkbox" name="interested-in" value="strategy" />
+        digital strategy
+      </label>
+      <label><input type="checkbox" name="interested-in" value="jobs" />
+        jobs
+      </label>
+      <label><input type="checkbox" name="interested-in" value="collaboration" />
+        collaboration
+      </label>
+      <label><input type="checkbox" name="interested-in" value="other">
+        something else
+      </label>
+    </fieldset>
+
+    <label class="tell-more">tell us more: <br />
+      <textarea name="tell-us-more" rows="4"></textarea>
+    </label>
+
+    <fieldset class="heard-about">
+      <legend>heard about position through:</legend>
+        <label><input type="checkbox" name="heard-about-via" value="referral" />
+          a referral
+        </label>
+        <label><input type="checkbox" name="heard-about-via" value="event"/>
+          an event
+        </label>
+        <label><input type="checkbox" name="heard-about-via" value="search" />
+          search
+        </label>
+        <label><input type="checkbox" name="heard-about-via" value="social"/>
+          social media
+        </label>
+        <label><input type="checkbox" name="heard-about-via" value="other" />
+          something else
+        </label>
+    </fieldset>
+
+    <div class="button-wrapper">
+      <input type="submit" value="send" />
+    </div>
+  </form>
+
+  <div id="thank-you">
+    <h3 id="thank-you-name">thank you</h3>
+
+    <p>We'll get back to you shortly.</p>
+  </div>
+</div>
