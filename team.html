@@ -1,0 +1,20 @@
+---
+layout: default
+title: team
+---
+<ul class="team">
+      {% assign sorted = site.workers | sort: 'start_date' %}
+      {% for worker in sorted %}
+      <li>
+        <h3>{{ worker.name }}</h3>
+
+        <div>{{ worker.content | markdownify }}</div>
+      </li>
+      {% endfor %}
+</ul>
+
+<hr />
+
+<h3>Join us</h3>
+
+<p>Learn about <a href="/work.html">job opportunities</a> with Position.</p>
