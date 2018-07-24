@@ -1,3 +1,23 @@
+# Install
+
+If you want to use rbenv:
+
+```
+brew install rbenv
+rbenv init
+# follow instructions in output from `rbenv init`
+ rbenv install 2.5.1
+rbenv local 2.5.1
+gem install bundler
+bundle install
+```
+
+# Run server
+
+```
+bundle exec jekyll serve
+```
+
 # Add workers
 
 Add a bio in this format to `_workers`:
