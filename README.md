@@ -1,12 +1,16 @@
-# Install
+# Install project
 
 If you want to use rbenv:
 
 ```
 brew install rbenv
 rbenv init
-# follow instructions in output from `rbenv init`
- rbenv install 2.5.1
+```
+
+Follow the instructions in output from `rbenv init`, then:
+
+```
+rbenv install 2.5.1
 rbenv local 2.5.1
 gem install bundler
 bundle install
