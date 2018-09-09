@@ -52,49 +52,92 @@
     }())
 
     function postToAirtableViaGlitch(e) {
-    e.preventDefault()
-    var glitch = "https://airtable-post-proxy.glitch.me/api/contact";
+        e.preventDefault()
+        var glitch = "https://airtable-post-proxy.glitch.me";
 
-    var form = document.getElementById("contact-form")
+        var form = document.getElementById("contact-form")
 
-    const formData = new FormData(form);
-    let jsonObject = {};
+        const formData = new FormData(form);
+        let jsonObject = {};
 
-    for (const [key, value]  of formData.entries()) {
-        console.log(key);
-        if (key == 'interested-in'
-            || key == 'heard-about-via') {
-        var list = [];
-        var curVal = jsonObject[key];
+        for (const [key, value]  of formData.entries()) {
+            if (key == 'interested-in' || key == 'heard-about-via') {
+                // create list from form data for these fields
+                var list = [];
+                var alreadyAdded = jsonObject[key];
 
-        if (curVal) {
-            list = curVal;
+                if (alreadyAdded) {
+                    list = alreadyAdded;
+                }
+
+                list.push(value)
+
+                jsonObject[key] = list
+            } else {
+                jsonObject[key] = value;
+            }
         }
 
-        list.push(value)
+        window.fetch(glitch + '/api/contact', {
+            method: "POST",
+            body: JSON.stringify(jsonObject),
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            }
+        }).then(function (resp) {
+            return resp.json()
+        }).then(function (json) {
+            if (json.success) {
+                document.getElementById("contact-form").style.display = "none";
+                showMessage("thank you, " + jsonObject['name'])
+            } else {
+                throw("failure :(")
+            }
+        }).catch(function(){
+            document.getElementById("submit-button").setAttribute("value", "error :(")
+            showMessage("Sorry, the form isn't working. Please email workers@positiondev.com to contact us.")
+        })
+    }
 
-        jsonObject[key] = list
+    var showMessage = function(message){
+        document.getElementById("thank-you").style.display = "block";
+        document.getElementById("thank-you-name").innerHTML = message;
+    }
+
+    var wakeUp = function(countdown){
+        var glitch = "https://airtable-post-proxy.glitch.me";
+
+        if (countdown > 0) {
+            window.fetch(glitch + "/api/ready", {
+                method: "GET",
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                }
+            }).then(function(resp){
+                return resp.json()
+            }).then(function(json){
+                if (json.ready) {
+                    document.getElementById("contact-form").addEventListener("submit", postToAirtableViaGlitch)
+                    document.getElementById("submit-button").removeAttribute("disabled")
+                    document.getElementById("submit-button").setAttribute("value", "send")
+                } else {
+                    window.setTimeout(function(){wakeUp(countdown-1)}, 1000)
+                }
+            })
         } else {
-        jsonObject[key] = value;
+            showMessage("Sorry, the form isn't working. Please email workers@positiondev.com to contact us.")
+            document.getElementById("submit-button").setAttribute("value", "error :(")
         }
     }
 
-    window.fetch(glitch, {
-        method: "POST",
-        body: JSON.stringify(jsonObject),
-        headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-        }
-    })
+    var start = function(){
+        document.getElementById("submit-button").setAttribute("disabled", "disabled")
+        document.getElementById("submit-button").setAttribute("value", "please wait...")
 
-    document.getElementById("contact-form").style.display = "none";
-    document.getElementById("thank-you").style.display = "block";
-    document.getElementById("thank-you-name").innerHTML = "thank you, " + jsonObject['name'];
+        wakeUp(5)
     }
 
-
-    (function(){
-        document.getElementById("contact-form").addEventListener("submit", postToAirtableViaGlitch)
-    }())
+    start()
 </script>
