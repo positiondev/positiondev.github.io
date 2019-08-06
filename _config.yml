@@ -28,6 +28,7 @@ github_username:  positiondev
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 collections:
 - workers
 - testimonials
