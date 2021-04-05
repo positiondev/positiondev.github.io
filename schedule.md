@@ -18,7 +18,7 @@ layout: default
 
   <p>Custom development can be expensive and risky. Libby can help you evaluate the appropriateness of custom development versus alternatives such Wix, Squarespace, Shopify, or WordPress.</p>
 
-</div>
+<h3>Schedule a free chat or a consultation below</h3>
 
 <!-- Calendly inline widget begin -->
 <div class="calendly-inline-widget" data-url="https://calendly.com/positiondevlibby?hide_landing_page_details=1" style="min-width:320px;height:630px;"></div>
