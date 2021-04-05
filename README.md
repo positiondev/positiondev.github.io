@@ -22,6 +22,10 @@ bundle install
 bundle exec jekyll serve
 ```
 
+# Build
+
+Simply commit your changes to master and GitHub will build and serve the updated site.
+
 # Add workers
 
 Add a bio in this format to `_workers`:
