@@ -1,0 +1,15 @@
+- name: Verso Books
+  url: "https://www.versobooks.com"
+  image: "logo_verso.gif"
+- url: "https://thenewinquiry.com/"
+  name: The New Inquiry
+  image: "logo_NI.gif"
+- url: "https://www.criterion.com"
+  name: The Criterion Collection
+  image: "logo_criterion.gif"
+- url: "https://www.dissentmagazine.org"
+  name: Dissent Magazine
+  image: "logo_dm.gif"
+- url: "https://frame.ai"
+  name: frame.ai
+  image: "logo_frameai.gif"

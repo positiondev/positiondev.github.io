@@ -28,10 +28,24 @@
       </section>
 
       <section class="clients" id="clients">
-        <h2>clients</h2>
+        <h2>Current clients</h2>
 
         <ul>
           {% for client in site.data.clients %}
+          <li>
+            <div class="img-wrapper">
+              <img title="{{ client.name }} logo" src="/img/{{ client.image }}" />
+            </div>
+            <h3><a href="{{ client.url }}" target="_blank" rel="noopener">{{ client.name }}</a></h3>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section class="clients" id="past_clients">
+        <h2>Past clients</h2>
+
+        <ul>
+          {% for client in site.data.past_clients %}
           <li>
             <div class="img-wrapper">
               <img title="{{ client.name }} logo" src="/img/{{ client.image }}" />
