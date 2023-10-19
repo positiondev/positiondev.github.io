@@ -1,21 +1,5 @@
 # Install project
 
-If you want to use rbenv:
-
-```
-brew install rbenv
-rbenv init
-```
-
-Follow the instructions in output from `rbenv init`, then:
-
-```
-rbenv install 2.5.1
-rbenv local 2.5.1
-gem install bundler
-bundle install
-```
-
 # Run server
 
 ```
