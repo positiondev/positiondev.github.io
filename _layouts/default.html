@@ -20,11 +20,13 @@
 
     <main>
       <section>
-        <h2>
-          {{ page.title }}
-        </h2>
+        {% if page.title != "contact us" %}
+          <h2>
+            {{ page.title }}
+          </h2>
+        {% endif %}
         <div>
-        {{ content }}
+          {{ content }}
         </div>
       </section>
     </main>
