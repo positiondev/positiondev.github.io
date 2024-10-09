@@ -28,8 +28,8 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
-    jekyll-feed (0.10.0)
-      jekyll (~> 3.3)
+    jekyll-feed (0.17.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-redirect-from (0.15.0)
       jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (1.5.2)
@@ -72,7 +72,7 @@ PLATFORMS
 DEPENDENCIES
   cssminify
   jekyll (~> 3.9)
-  jekyll-feed (~> 0.6)
+  jekyll-feed (~> 0.17)
   jekyll-redirect-from (~> 0.15.0)
   kramdown-parser-gfm (~> 1.1)
   minima (~> 2.0)
