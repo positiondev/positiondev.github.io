@@ -19,8 +19,8 @@ gem "minima", "~> 2.5"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
+  gem 'jekyll-redirect-from', "~> 0.16.0"
   gem "jekyll-feed", "~> 0.17"
-  gem 'jekyll-redirect-from', "~> 0.15.0"
 end
 
 
